@@ -198,7 +198,7 @@ export default function Home() {
             <IslamicCalendar />
             <div className="relative w-full max-w-3xl mx-auto aspect-video rounded-lg overflow-hidden shadow-xl">
               <Image
-                src="/public/placeholder.svg?height=450&width=800"
+                src="./placeholder.svg?height=450&width=800"
                 alt={t('siteName')}
                 layout="fill"
                 objectFit="cover"

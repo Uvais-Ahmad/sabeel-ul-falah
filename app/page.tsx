@@ -223,6 +223,7 @@ export default function Home() {
               <div className="bg-neutral-800 p-6 rounded-lg">
                 <h3 className="text-2xl font-semibold mb-4 gradient-text">{t('about.values.title')}</h3>
                 <ul className="list-disc list-inside">
+                  {/* update the details */}
                   {t('about.values.items').map((item, index) => (
                     <li key={index}>{item}</li>
                   ))}

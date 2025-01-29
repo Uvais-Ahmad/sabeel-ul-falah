@@ -67,3 +67,9 @@ body {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
+.footer-bg-image {
+  background-image: url("/placeholder.svg?height=600&width=1920&text=Footer+Background");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}

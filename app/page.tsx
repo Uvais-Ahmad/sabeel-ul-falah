@@ -298,45 +298,45 @@ const ContactSection = ({ t, language, theme }) => (
 )
 
 const Footer = ({ t, language, theme }) => (
-  <footer className={`${theme === "dark" ? "bg-gradient-to-b from-black to-neutral-900" : "bg-gray-200"} py-8 relative overflow-hidden`}>
+  <footer className={`${theme === "dark" ? "bg-gradient-to-b from-black to-neutral-900" : "bg-gray-200"} py-16 relative overflow-hidden min-h-[70vh] flex items-center`}>
     <div className="footer-bg-image absolute inset-0 opacity-20"></div>
-    <div className="container mx-auto px-4  relative z-10">
-      <div className="grid md:grid-cols-3 gap-8">
-        <div>
-          <h3 className={`text-xl font-semibold mb-4 ${theme === "dark" ? "gradient-text" : "text-emerald-600"}`}>
+    <div className="container mx-auto px-4 relative z-10">
+      <div className="grid md:grid-cols-3 gap-12">
+        <div className="space-y-4">
+          <h3 className={`text-2xl font-semibold mb-6 ${theme === "dark" ? "gradient-text" : "text-emerald-600"}`}>
             {t("siteName")}
           </h3>
-          <p>{t("footer.description")}</p>
+          <p className="text-lg">{t("footer.description")}</p>
         </div>
-        <div>
-          <h3 className={`text-xl font-semibold mb-4 ${theme === "dark" ? "gradient-text" : "text-emerald-600"}`}>
+        <div className="space-y-4">
+          <h3 className={`text-2xl font-semibold mb-6 ${theme === "dark" ? "gradient-text" : "text-emerald-600"}`}>
             {t("footer.location")}
           </h3>
-          <p>{t("footer.address.street")}</p>
-          <p>{t("footer.address.city")}</p>
-          <p>{t("footer.address.country")}</p>
+          <p className="text-lg">{t("footer.address.street")}</p>
+          <p className="text-lg">{t("footer.address.city")}</p>
+          <p className="text-lg">{t("footer.address.country")}</p>
         </div>
-        <div>
-          <h3 className={`text-xl font-semibold mb-4 ${theme === "dark" ? "gradient-text" : "text-emerald-600"}`}>
+        <div className="space-y-4">
+          <h3 className={`text-2xl font-semibold mb-6 ${theme === "dark" ? "gradient-text" : "text-emerald-600"}`}>
             {t("footer.contact")}
           </h3>
-          <p>{t("footer.phone")}</p>
-          <p>{t("footer.email")}</p>
-          <div className="mt-4 flex space-x-4">
-            <a href="#" className={`text-2xl hover:text-yellow-400 ${theme === "dark" ? "text-white" : "text-black"}`}>
+          <p className="text-lg">{t("footer.phone")}</p>
+          <p className="text-lg">{t("footer.email")}</p>
+          <div className="mt-8 flex space-x-6">
+            <a href="#" className={`text-3xl hover:text-yellow-400 transition-colors duration-300 ${theme === "dark" ? "text-white" : "text-black"}`}>
               <FaFacebook />
             </a>
-            <a href="#" className={`text-2xl hover:text-yellow-400 ${theme === "dark" ? "text-white" : "text-black"}`}>
+            <a href="#" className={`text-3xl hover:text-yellow-400 transition-colors duration-300 ${theme === "dark" ? "text-white" : "text-black"}`}>
               <FaInstagram />
             </a>
-            <a href="#" className={`text-2xl hover:text-yellow-400 ${theme === "dark" ? "text-white" : "text-black"}`}>
+            <a href="#" className={`text-3xl hover:text-yellow-400 transition-colors duration-300 ${theme === "dark" ? "text-white" : "text-black"}`}>
               <FaYoutube />
             </a>
           </div>
         </div>
       </div>
-      <div className="mt-8 text-center text-yellow-400">
-        <p>
+      <div className="mt-16 text-center">
+        <p className="text-yellow-400 text-lg">
           &copy; {new Date().getFullYear()} {t("siteName")}. {t("footer.rights")}
         </p>
       </div>

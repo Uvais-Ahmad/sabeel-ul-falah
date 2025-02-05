@@ -43,7 +43,7 @@ body {
 }
 
 .bg-image {
-  background-image: url("/placeholder.svg?height=1080&width=1920");
+  background-image: url("/madarsa.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -68,8 +68,9 @@ body {
 }
 
 .footer-bg-image {
-  background-image: url("/placeholder.svg?height=600&width=1920&text=Footer+Background");
+  background-image: url("/placeholder.svg?height=1080&width=1920&text=Footer+Background");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  min-height: 70vh;
 }

@@ -68,7 +68,7 @@ body {
 }
 
 .footer-bg-image {
-  background-image: url("/placeholder.svg?height=1080&width=1920&text=Footer+Background");
+  background-image: url("/footer2.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;

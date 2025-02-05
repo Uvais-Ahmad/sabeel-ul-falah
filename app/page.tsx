@@ -129,10 +129,20 @@ const FatwaForm = ({ language, theme }) => {
 }
 
 const HeroSection = ({ t, language, theme }) => (
-  <section className="py-20 text-center">
+  <section className="py-20 text-center h-screen">
+    <div className="relative mx-auto w-[300px] h-[100px]">
+        <Image
+          src="/kalma.png"
+          alt={t("siteName")}
+          width={300}
+          height={100}
+          className="w-full h-full object-contain"
+          style={{ background: 'transparent' }}
+        />
+      </div>
     <div className="container mx-auto px-4">
       <motion.h2
-        className={`text-4xl font-bold mb-4 ${theme === "dark" ? "gradient-text" : "text-emerald-600"}`}
+        className={`text-4xl font-bold mb-4 p-4 ${theme === "dark" ? "gradient-text" : "text-emerald-600"}`}
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
@@ -148,15 +158,6 @@ const HeroSection = ({ t, language, theme }) => (
         {t("tagline")}
       </motion.p>
       <IslamicCalendar language={language} />
-      <div className="relative w-full max-w-3xl mx-auto aspect-video rounded-lg overflow-hidden shadow-xl">
-        <Image
-          src="/placeholder.svg?height=450&width=800"
-          alt={t("siteName")}
-          layout="fill"
-          objectFit="cover"
-          className="rounded-lg"
-        />
-      </div>
     </div>
   </section>
 )
@@ -223,7 +224,7 @@ const GallerySection = ({ language, theme }) => (
         {[1, 2, 3, 4, 5, 6, 7, 8].map((item) => (
           <div key={item} className="relative overflow-hidden rounded-lg shadow-lg">
             <Image
-              src={`/placeholder.svg?height=150&width=150&text=Image${item}`}
+              src={`/library.jpg`}
               alt={`Gallery Image ${item}`}
               width={150}
               height={150}
@@ -373,7 +374,7 @@ export default function Home() {
       <div className="bg-image fixed inset-0 z-0"></div>
       <div className="content-overlay relative z-10">
         <header
-          className={`fixed w-full z-50 ${theme === "dark" ? "bg-black bg-opacity-50" : "bg-white bg-opacity-50"} backdrop-blur-md`}
+          className={`fixed w-full z-50 ${theme === "dark" ? "bg-black bg-opacity-10" : "bg-white bg-opacity-30"} backdrop-blur-sm`}
         >
           <div className="container mx-auto px-4 py-4 flex justify-between items-center">
             <div className="flex items-center space-x-2">

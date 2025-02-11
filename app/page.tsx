@@ -9,17 +9,24 @@ import { useState, useEffect } from "react"
 import { LanguageToggle } from "@/components/language-toggle"
 import { useLanguage } from "@/lib/language-context"
 import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa"
+import moment from 'moment-hijri'
 
-const IslamicCalendar = ({ language }) => {
+const IslamicCalendar = ({ language }: {language: string}) => {
   const [date, setDate] = useState("")
 
   useEffect(() => {
-    setDate(language === "ur" ? "15 رمضان 1445" : "15 Ramadan 1445")
+    let date;
+    if(language === "ur") {
+      date = moment().format();
+    } else {
+      date = moment().format('iD-iMMM-iYYYY هـ | D/MMM/YYYY');
+    }
+    setDate(date);
   }, [language])
 
   return (
     <div className="text-center mt-4">
-      <p className={`text-lg ${language === "ur" ? "font-gulzar" : ""}`}>{date}</p>
+      <p className={`text-3xl ${language === "ur" ? "font-gulzar" : ""}`}>{date}</p>
     </div>
   )
 }

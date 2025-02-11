@@ -10,19 +10,15 @@ import { LanguageToggle } from "@/components/language-toggle"
 import { useLanguage } from "@/lib/language-context"
 import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa"
 import moment from 'moment-hijri'
+import SearchForm from "@/components/search-form"
 
 const IslamicCalendar = ({ language }: {language: string}) => {
   const [date, setDate] = useState("")
 
   useEffect(() => {
-    let date;
-    if(language === "ur") {
-      date = moment().format();
-    } else {
-      date = moment().format('iD-iMMM-iYYYY هـ | D/MMM/YYYY');
-    }
+    const date = moment().format('iD-iMMM-iYYYY هـ | D/MMM/YYYY');
     setDate(date);
-  }, [language])
+  }, [])
 
   return (
     <div className="text-center mt-4">
@@ -57,16 +53,6 @@ const MadrasaStats = ({ t, language, theme }) => {
     </div>
   )
 }
-
-const IslamicPattern = () => (
-  <svg width="100%" height="100%" viewBox="0 0 100 100" className="absolute inset-0 z-0 opacity-10">
-    <pattern id="islamic-pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-      <path d="M10 0L0 10L10 20L20 10Z" fill="currentColor" />
-      <path d="M0 10L10 0L20 10L10 20Z" fill="currentColor" />
-    </pattern>
-    <rect width="100%" height="100%" fill="url(#islamic-pattern)" />
-  </svg>
-)
 
 const FatwaForm = ({ language, theme }) => {
   return (
@@ -307,7 +293,7 @@ const ContactSection = ({ t, language, theme }) => (
 
 const Footer = ({ t, language, theme }) => (
   <footer className={`${theme === "dark" ? "bg-gradient-to-b from-black to-neutral-900" : "bg-gray-200"} py-16 relative overflow-hidden min-h-[70vh] flex items-center`}>
-    <div className="footer-bg-image absolute inset-0 opacity-20"></div>
+    <div className="footer-bg-image absolute inset-0 opacity-20 min-h-72"></div>
     <div className="container mx-auto px-4 relative z-10">
       <div className="grid md:grid-cols-3 gap-12">
         <div className="space-y-4">
@@ -441,10 +427,10 @@ export default function Home() {
           <ProgramsSection t={t} language={language} theme={theme} />
           <GallerySection language={language} theme={theme} />
           <StatsSection t={t} language={language} theme={theme} />
-          <FatwaSection t={t} language={language} theme={theme} />
+          <SearchForm />
+          {/* <FatwaSection t={t} language={language} theme={theme} /> */}
           <ContactSection t={t} language={language} theme={theme} />
         </main>
-
         <Footer t={t} language={language} theme={theme} />
       </div>
     </div>

@@ -74,3 +74,11 @@ body {
   background-attachment: fixed;
   min-height: 70vh;
 }
+
+.contact-bg-image {
+  background-image: url("/quranAyat1.jpg");
+  background-size: cover;
+  background-position: center;
+  /* background-attachment: fixed; */
+  height: 100vh;
+}

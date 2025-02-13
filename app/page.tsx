@@ -175,7 +175,7 @@ const StatsSection = ({ t, language, theme }) => (
 )
 
 const ContactSection = ({ t, language, theme }) => (
-  <section id="contact" className={`py-16 ${theme === "dark" ? "bg-neutral-900" : "bg-gray-100"}`}>
+  <section id="contact" className={`py-16 ${theme === "dark" ? "bg-neutral-900" : "bg-gray-100"} min-h-[60vh]`}>
     <div className="container mx-auto px-4 text-center">
       <h2 className={`text-3xl font-bold mb-8 ${theme === "dark" ? "gradient-text" : "text-emerald-600"}`}>
         {t("contact.title")}

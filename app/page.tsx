@@ -54,73 +54,6 @@ const MadrasaStats = ({ t, language, theme }) => {
   )
 }
 
-const FatwaForm = ({ language, theme }) => {
-  return (
-    <div 
-      className={`${theme === "dark" ? "bg-neutral-800" : "bg-white"
-        } p-8 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300`}>
-      <h3
-        className={`text-2xl font-bold mb-6 ${language === "ur" ? "font-gulzar" : ""} ${theme === "dark" ? "gradient-text" : "text-emerald-600"}`}
-      >
-        {language === "ur" ? "آن لائن فتویٰ یا مسئلہ" : "Online Fatwa or Question"}
-      </h3>
-      <form className="space-y-6">
-        <div>
-          <label
-            htmlFor="email"
-            className={`block text-sm font-medium ${theme === "dark" ? "text-gray-300" : "text-gray-700"} mb-2`}
-          >
-            {language === "ur" ? "ای میل" : "Email"}
-          </label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            className={`w-full px-4 py-3 ${theme === "dark" ? "bg-neutral-700 border-neutral-600" : "bg-gray-100 border-gray-300"} border rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-colors duration-300`}
-            required
-          />
-        </div>
-        <div>
-          <label
-            htmlFor="phone"
-            className={`block text-sm font-medium ${theme === "dark" ? "text-gray-300" : "text-gray-700"} mb-2`}
-          >
-            {language === "ur" ? "فون نمبر" : "Phone Number"}
-          </label>
-          <input
-            type="tel"
-            id="phone"
-            name="phone"
-            className={`w-full px-3 py-2 ${theme === "dark" ? "bg-neutral-700 border-neutral-600" : "bg-gray-100 border-gray-300"} border rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-colors duration-300`}
-            required
-          />
-        </div>
-        <div>
-          <label
-            htmlFor="question"
-            className={`block text-sm font-medium ${theme === "dark" ? "text-gray-300" : "text-gray-700"} mb-2`}
-          >
-            {language === "ur" ? "سوال" : "Question"}
-          </label>
-          <textarea
-            id="question"
-            name="question"
-            rows={4}
-            className={`w-full px-4 py-3 ${theme === "dark" ? "bg-neutral-700 border-neutral-600" : "bg-gray-100 border-gray-300"} border rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-colors duration-300`}
-            required
-          ></textarea>
-        </div>
-        <button
-          type="submit"
-          className={`w-full ${theme === "dark" ? "bg-gradient-to-r from-emerald-500 to-green-600" : "bg-emerald-600"} text-white py-2 px-4 rounded-md hover:from-emerald-600 hover:to-green-700 transition duration-300 shadow-md  transform hover:scale-105`}
-        >
-          {language === "ur" ? "سوال جمع کرائیں" : "Submit Question"}
-        </button>
-      </form>
-    </div>
-  )
-}
-
 const HeroSection = ({ t, language, theme }) => (
   <section className="py-20 text-center h-screen">
     <div className="relative mx-auto w-[300px] h-[100px]">
@@ -182,7 +115,7 @@ const AboutSection = ({ t, language, theme }) => (
 )
 
 const ProgramsSection = ({ t, language, theme }) => (
-  <section id="programs" className={`py-16 ${theme === "dark" ? "bg-black" : "bg-white"}`}>
+  <section id="programs" className={`py-16 ${theme === "dark" ? "bg-neutral-900" : "bg-white"}`}>
     <div className="container mx-auto px-4">
       <h2 className={`text-3xl font-bold mb-8 text-center ${theme === "dark" ? "gradient-text" : "text-emerald-600"}`}>
         {t("programs.title")}
@@ -236,30 +169,6 @@ const StatsSection = ({ t, language, theme }) => (
       <div className="grid md:grid-cols-2 gap-8">
         <IslamicCalendar language={language} />
         <MadrasaStats t={t} language={language} theme={theme} />
-      </div>
-    </div>
-  </section>
-)
-
-const FatwaSection = ({ t, language, theme }) => (
-  <section id="fatwa" className={`py-16 ${theme === "dark" ? "bg-black" : "bg-white"}`}>
-    <div className="container mx-auto px-4">
-      <h2 className={`text-3xl font-bold mb-8 text-center ${theme === "dark" ? "gradient-text" : "text-emerald-600"}`}>
-        {language === "ur" ? "آن لائن فتویٰ یا مسئلہ" : "Online Fatwa or Question"}
-      </h2>
-      <div className="flex flex-col md:flex-row items-center justify-between">
-        <div className="md:w-1/2 mb-8 md:mb-0 md:order-2">
-          <Image
-            src="/placeholder.svg?height=400&width=600&text=Fatwa"
-            alt="Fatwa"
-            width={600}
-            height={400}
-            className="rounded-lg shadow-lg"
-          />
-        </div>
-        <div className="md:w-1/2 md:order-1">
-          <FatwaForm language={language} theme={theme} />
-        </div>
       </div>
     </div>
   </section>

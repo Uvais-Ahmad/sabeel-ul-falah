@@ -8,9 +8,9 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card"
 
 export default function SearchForm() {
     return (
-        <div className="min-h-screen flex items-center justify-center p-4 relative">
-            <div className="contact-bg-image absolute inset-0 z-0"></div>
-            <Card className="w-1/3 max-w-3xl shadow-lg z-50 mr-auto overflow-hidden">
+        <div className=" py-16 relative overflow-hidden min-h-[70vh] flex items-center">
+            <div className="contact-bg-image absolute inset-0 opacity-20 min-h-72"></div>
+            <Card className="w-1/3 max-w-3xl shadow-lg mr-auto relative overflow-hidden z-10">
                 <CardHeader className="bg-blue-600 text-white p-4 rounded-t-lg">
                     <div className="flex items-center gap-2">
                         <div className="w-2 h-2 bg-yellow-400 rounded-full" />

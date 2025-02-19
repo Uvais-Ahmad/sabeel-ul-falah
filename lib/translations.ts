@@ -8,7 +8,7 @@ export const translations = {
         contact: "Contact",
       },
       hero: {
-        welcome: "Welcome to Sabeel-Ul-Falah",
+        welcome: "Marhaba to Sabeel-Ul-Falah",
       },
       about: {
         title: "About Our Madrasa",

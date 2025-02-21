@@ -204,27 +204,27 @@ const Footer = ({ t, language, theme }) => (
   <footer className={`${theme === "dark" ? "bg-gradient-to-b from-black to-neutral-900" : "bg-gray-200"} py-16 relative overflow-hidden min-h-[70vh] flex items-center`}>
     <div className="footer-bg-image absolute inset-0 opacity-20 min-h-72"></div>
     <div className="container mx-auto px-4 relative z-10">
-      <div className="grid md:grid-cols-3 gap-12">
+      <div className="grid md:grid-cols-3 gap-16">
         <div className="space-y-4">
           <h3 className={`text-2xl font-semibold mb-6 ${theme === "dark" ? "gradient-text" : "text-emerald-600"}`}>
             {t("siteName")}
           </h3>
-          <p className="text-lg">{t("footer.description")}</p>
+          <p className="text-base font-thin">{t("footer.description")}</p>
         </div>
         <div className="space-y-4">
           <h3 className={`text-2xl font-semibold mb-6 ${theme === "dark" ? "gradient-text" : "text-emerald-600"}`}>
             {t("footer.location")}
           </h3>
-          <p className="text-lg">{t("footer.address.street")}</p>
-          <p className="text-lg">{t("footer.address.city")}</p>
-          <p className="text-lg">{t("footer.address.country")}</p>
+          <p className="text-base">{t("footer.address.street")}</p>
+          <p className="text-base">{t("footer.address.city")}</p>
+          <p className="text-base">{t("footer.address.country")}</p>
         </div>
         <div className="space-y-4">
           <h3 className={`text-2xl font-semibold mb-6 ${theme === "dark" ? "gradient-text" : "text-emerald-600"}`}>
             {t("footer.contact")}
           </h3>
-          <p className="text-lg">{t("footer.phone")}</p>
-          <p className="text-lg">{t("footer.email")}</p>
+          <p className="text-base">{t("footer.phone")}</p>
+          <p className="text-base">{t("footer.email")}</p>
           <div className="mt-8 flex space-x-6">
             <a href="#" className={`text-3xl hover:text-yellow-400 transition-colors duration-300 ${theme === "dark" ? "text-white" : "text-black"}`}>
               <FaFacebook />

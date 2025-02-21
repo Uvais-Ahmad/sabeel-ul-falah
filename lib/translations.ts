@@ -1,7 +1,7 @@
 export const translations = {
     en: {
       siteName: "Sabeel-Ul-Falah",
-      tagline: "Illuminating Minds, Nurturing Souls",
+      tagline: "Sabeel-Ul-Falah aims to impart Islamic values, religious guidelines, and secular education through the study of Islam.",
       nav: {
         about: "About",
         programs: "Programs",
@@ -49,15 +49,15 @@ export const translations = {
         donate: "Donate",
       },
       footer: {
-        description: "Illuminating minds and nurturing souls since 1990",
+        description: "The central objective of Sabeel-Ul-Falah is to spread the essence of religious guidelines, Islamic values, and secular teaching through the study of Islam.",
         location: "Location",
         address: {
-          street: "123 Islamic Street",
-          city: "Cityville, State 12345",
-          country: "Country",
+          street: "Near Masjid Nooh, crasher colony, roorkee road",
+          city: "Muzaffarnagar, Uttar Pradesh 251002",
+          country: "India",
         },
         contact: "Contact",
-        phone: "Phone: (123) 456-7890",
+        phone: "Phone: +91 9758124040",
         email: "Email: info@sabeelulfalah.com",
         rights: "All rights reserved.",
       },

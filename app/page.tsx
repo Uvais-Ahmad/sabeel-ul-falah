@@ -260,7 +260,7 @@ export default function Home() {
   if (!mounted) {
     return null
   }
-
+// du,,u vkmmhgjhg
   const navItems = [
     { href: "#about", label: t("nav.about") },
     { href: "#programs", label: t("nav.programs") },

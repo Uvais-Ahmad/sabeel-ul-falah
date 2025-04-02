@@ -11,8 +11,20 @@ import { useLanguage } from "@/lib/language-context"
 import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa"
 import moment from 'moment-hijri'
 import SearchForm from "@/components/search-form"
+import { translations } from "@/lib/translations"
 
-const IslamicCalendar = ({ language }: {language: string}) => {
+// First, let's define the structure of our translations
+type TranslationType = typeof translations;
+type LanguageKeys = keyof TranslationType; // 'en' | 'ur'
+
+// Update the CommonProps interface
+interface CommonProps {
+  t: (key: string) => string | string[]; // Updated to handle array returns
+  language: LanguageKeys;
+  theme: string | undefined;
+}
+
+const IslamicCalendar = ({ language }: { language: 'en' | 'ur' }) => {
   const [date, setDate] = useState("")
 
   useEffect(() => {
@@ -27,7 +39,7 @@ const IslamicCalendar = ({ language }: {language: string}) => {
   )
 }
 
-const MadrasaStats = ({ t, language, theme }) => {
+const MadrasaStats = ({ t, language, theme }: CommonProps) => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
       {[
@@ -54,12 +66,12 @@ const MadrasaStats = ({ t, language, theme }) => {
   )
 }
 
-const HeroSection = ({ t, language, theme }) => (
+const HeroSection = ({ t, language, theme }: CommonProps) => (
   <section className="py-20 text-center h-screen">
     <div className="relative mx-auto w-[300px] h-[100px]">
         <Image
           src="/kalma.png"
-          alt={t("siteName")}
+          alt={t("siteName").toString()}
           width={300}
           height={100}
           className="w-full h-full object-contain"
@@ -88,7 +100,7 @@ const HeroSection = ({ t, language, theme }) => (
   </section>
 )
 
-const AboutSection = ({ t, language, theme }) => (
+const AboutSection = ({ t, theme }: CommonProps) => (
   <section id="about" className={`py-16 ${theme === "dark" ? "bg-neutral-900" : "bg-gray-100"}`}>
     <div className="container mx-auto px-4">
       <h2 className={`text-3xl font-bold mb-8 text-center ${theme === "dark" ? "gradient-text" : "text-emerald-600"}`}>
@@ -104,7 +116,7 @@ const AboutSection = ({ t, language, theme }) => (
             {t("about.values.title")}
           </h3>
           <ul className="list-disc list-inside">
-            {t("about.values.items").map((item, index) => (
+            {(t("about.values.items") as string[]).map((item: string, index: number) => (
               <li key={index}>{item}</li>
             ))}
           </ul>
@@ -114,14 +126,14 @@ const AboutSection = ({ t, language, theme }) => (
   </section>
 )
 
-const ProgramsSection = ({ t, language, theme }) => (
+const ProgramsSection = ({ t, theme }: CommonProps) => (
   <section id="programs" className={`py-16 ${theme === "dark" ? "bg-neutral-900" : "bg-white"}`}>
     <div className="container mx-auto px-4">
       <h2 className={`text-3xl font-bold mb-8 text-center ${theme === "dark" ? "gradient-text" : "text-emerald-600"}`}>
         {t("programs.title")}
       </h2>
       <div className="grid md:grid-cols-3 gap-8">
-        {t("programs.items").map((program, index) => (
+        {(t("programs.items") as string[]).map((program: string, index: number) => (
           <motion.div
             key={index}
             className={`${theme === "dark" ? "bg-neutral-800" : "bg-gray-100"} p-6 rounded-lg shadow-md`}
@@ -140,7 +152,7 @@ const ProgramsSection = ({ t, language, theme }) => (
   </section>
 )
 
-const GallerySection = ({ language, theme }) => (
+const GallerySection = ({ language, theme }: Omit<CommonProps, 't'>) => (
   <section id="gallery" className={`py-16 ${theme === "dark" ? "bg-neutral-900" : "bg-gray-100"}`}>
     <div className="container mx-auto px-4">
       <h2 className={`text-3xl font-bold mb-8 text-center ${theme === "dark" ? "gradient-text" : "text-emerald-600"}`}>
@@ -163,7 +175,7 @@ const GallerySection = ({ language, theme }) => (
   </section>
 )
 
-const StatsSection = ({ t, language, theme }) => (
+const StatsSection = ({ t, language, theme }: CommonProps) => (
   <section className={`py-16 ${theme === "dark" ? "bg-neutral-900" : "bg-gray-100"}`}>
     <div className="container mx-auto px-4">
       <div className="grid md:grid-cols-2 gap-8">
@@ -174,7 +186,7 @@ const StatsSection = ({ t, language, theme }) => (
   </section>
 )
 
-const ContactSection = ({ t, language, theme }) => (
+const ContactSection = ({ t, theme }: CommonProps) => (
   <section id="contact" className={`py-16 ${theme === "dark" ? "bg-neutral-900" : "bg-gray-100"} min-h-[60vh]`}>
     <div className="container mx-auto px-4 text-center">
       <h2 className={`text-3xl font-bold mb-8 ${theme === "dark" ? "gradient-text" : "text-emerald-600"}`}>
@@ -200,7 +212,7 @@ const ContactSection = ({ t, language, theme }) => (
   </section>
 )
 
-const Footer = ({ t, language, theme }) => (
+const Footer = ({ t, theme }: CommonProps) => (
   <footer className={`${theme === "dark" ? "bg-gradient-to-b from-black to-neutral-900" : "bg-gray-200"} py-16 relative overflow-hidden min-h-[70vh] flex items-center`}>
     <div className="footer-bg-image absolute inset-0 opacity-20 min-h-72"></div>
     <div className="container mx-auto px-4 relative z-10">
@@ -260,7 +272,7 @@ export default function Home() {
   if (!mounted) {
     return null
   }
-// du,,u vkmmhgjhg
+
   const navItems = [
     { href: "#about", label: t("nav.about") },
     { href: "#programs", label: t("nav.programs") },
@@ -286,7 +298,7 @@ export default function Home() {
               </h1>
             </div>
             <nav className="hidden md:flex items-center space-x-4">
-              {navItems.map((item, index) => (
+              {navItems.map((item: { href: string; label: string }, index: number) => (
                 <a
                   key={index}
                   href={item.href}
@@ -313,7 +325,7 @@ export default function Home() {
               className={`md:hidden ${theme === "dark" ? "bg-black" : "bg-white"} py-4 fixed top-16 left-0 right-0 z-40`}
             >
               <nav className="flex flex-col items-center space-y-4">
-                {navItems.map((item, index) => (
+                {navItems.map((item: { href: string; label: string }, index: number) => (
                   <a
                     key={index}
                     href={item.href}

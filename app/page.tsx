@@ -28,7 +28,7 @@ const IslamicCalendar = ({ language }: { language: 'en' | 'ur' }) => {
   const [date, setDate] = useState("")
 
   useEffect(() => {
-    const date = moment().format('iD-iMMM-iYYYY هـ | D/MMM/YYYY');
+    const date = moment().format('iD/iMMM/iYYYY  هـ D/MMM/YYYY');
     setDate(date);
   }, [])
 

@@ -22,19 +22,18 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   const t = (key: string) => {
     const keys = key.split('.')
-    let value: any = translations[language]
+    let value: unknown = translations[language]
     for (const k of keys) {
       if (value && typeof value === 'object' && k in value) {
-        value = value[k]
+        value = (value as Record<string, unknown>)[k]
       } else {
         return key // Return the key if translation is not found
       }
     }
     return value
   }
-
   return (
-    <LanguageContext.Provider value={{ language, toggleLanguage, t }}>
+    <LanguageContext.Provider value={{ language, toggleLanguage, t: t as (key: string) => string }}>
       {children}
     </LanguageContext.Provider>
   )

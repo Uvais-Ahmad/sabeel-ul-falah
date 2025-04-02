@@ -1,10 +1,3 @@
-"use client"
-
-import { motion } from "framer-motion"
-import { Search } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Card, CardContent, CardHeader } from "@/components/ui/card"
 
 export default function SearchForm() {
     return (

@@ -21,3 +21,12 @@ This website serves as an online introduction to the Madarsa, highlighting its m
 - SEO-friendly
 
 ## 📂 Folder Structure
+📦madarsa-website
+┣ 📂public
+┣ 📂app
+┃ ┣ 📂(your pages here)
+┣ 📂components
+┣ 📂styles
+┣ 📄README.md
+┣ 📄package.json
+┗ 📄next.config.js

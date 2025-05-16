@@ -23,10 +23,10 @@ This website serves as an online introduction to the Madarsa, highlighting its m
 ## 📂 Folder Structure
 📦madarsa-website
 ┣ 📂public </br>
-┣ 📂app
-┃ ┣ 📂(your pages here)
-┣ 📂components
-┣ 📂styles
-┣ 📄README.md
-┣ 📄package.json
-┗ 📄next.config.js
+┣ 📂app  </br>
+┃ ┣ 📂(your pages here) </br>
+┣ 📂components  </br>
+┣ 📂styles  </br>
+┣ 📄README.md  </br>
+┣ 📄package.json  </br>
+┗ 📄next.config.js  </br>

@@ -22,7 +22,7 @@ This website serves as an online introduction to the Madarsa, highlighting its m
 
 ## 📂 Folder Structure
 📦madarsa-website
-┣ 📂public
+┣ 📂public </br>
 ┣ 📂app
 ┃ ┣ 📂(your pages here)
 ┣ 📂components

@@ -30,3 +30,21 @@ This website serves as an online introduction to the Madarsa, highlighting its m
 ┣ 📄README.md  </br>
 ┣ 📄package.json  </br>
 ┗ 📄next.config.js  </br>
+
+## 🚀 Getting Started
+
+To run this project locally:
+
+```bash
+# Clone the repository
+git clone https://github.com/your-username/madarsa-website.git
+
+# Navigate into the directory
+cd madarsa-website
+
+# Install dependencies
+npm install
+
+# Run the development server
+npm run dev
+

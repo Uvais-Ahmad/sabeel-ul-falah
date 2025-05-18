@@ -48,6 +48,9 @@ npm install
 # Run the development server
 npm run dev
 
+
+---
+
 ## 📸 Screenshots
 
 Add screenshots of the homepage or other sections here to showcase the design.

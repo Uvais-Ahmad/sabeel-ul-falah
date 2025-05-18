@@ -47,28 +47,6 @@ npm install
 
 # Run the development server
 npm run dev
-```bash
-
-
-## 📸 Screenshots
-
-Add screenshots of the homepage or other sections here to showcase the design.
-
-Example:
-
-![Homepage Screenshot](public/screenshots/homepage.png)
-![About Section](public/screenshots/about.png)
-
-> _Make sure to place your images inside the `public/screenshots/` directory or update the path accordingly._
-
----
-
-## 📃 License
-
-This project is open-source and free to use under the [MIT License](LICENSE).
-
----
-
 ## 🤝 Acknowledgements
 
 - Special thanks to **Cursor AI** for assisting in the development process.

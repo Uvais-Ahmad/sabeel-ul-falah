@@ -31,6 +31,15 @@ This website serves as an online introduction to the Madarsa, highlighting its m
 ┣ 📄package.json  </br>
 ┗ 📄next.config.js  </br>
 
+## 📸 Screenshots
+
+Add screenshots of the homepage or other sections here to showcase the design.
+
+Example:
+
+![Homepage Screenshot](public/screenshots/homepage.png)
+![About Section](public/screenshots/about.png)
+
 ## 🚀 Getting Started
 
 To run this project locally:

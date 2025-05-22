@@ -37,9 +37,6 @@ Add screenshots of the homepage or other sections here to showcase the design.
 
 Example:
 
-![Homepage Screenshot](public/screenshots/homepage.png)
-![About Section](public/screenshots/about.png)
-
 ## 🚀 Getting Started
 
 To run this project locally:

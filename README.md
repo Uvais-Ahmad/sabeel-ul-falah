@@ -1,6 +1,6 @@
 # 🕌 Madarsa Introduction Website
 
-A simple and elegant frontend website built with **Next.js** to introduce and showcase a **Madarsa** where Islamic studies are taught.
+A simple and elegant frontend website built with **Next.js** to introduce and showcase a **Madarsa** where Islamic studies are taught. great example
 
 ## 📌 Project Overview
 

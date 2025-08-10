@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gulzar:wght@400;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -16,23 +19,122 @@
   }
 }
 
+* {
+  scroll-behavior: smooth;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+  font-family: 'Inter', sans-serif;
+}
+
+.font-gulzar {
+  font-family: 'Gulzar', serif !important;
 }
 
 @layer base {
   body {
-    @apply transition-colors duration-300;
+    @apply transition-colors duration-500;
+  }
+  
+  html {
+    @apply scroll-smooth;
   }
 }
 
 @layer components {
   .gradient-text {
-    @apply bg-gradient-to-r from-green-400 to-green-600 text-transparent bg-clip-text;
+    @apply bg-gradient-to-r from-emerald-400 via-green-500 to-emerald-600 text-transparent bg-clip-text;
   }
+  
   .logo-text {
-    @apply bg-gradient-to-r from-yellow-300 to-yellow-600 text-transparent bg-clip-text font-extrabold;
+    @apply bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-600 text-transparent bg-clip-text font-extrabold;
+  }
+  
+  /* Modern Glass Effect */
+  .glass-effect {
+    @apply backdrop-blur-xl bg-white/10 dark:bg-black/20 border border-white/20 shadow-2xl;
+  }
+  
+  /* Floating Animation */
+  .floating {
+    animation: floating 6s ease-in-out infinite;
+  }
+  
+  .floating-delayed {
+    animation: floating 6s ease-in-out infinite;
+    animation-delay: 2s;
+  }
+  
+  /* Pulse Glow Effect */
+  .pulse-glow {
+    animation: pulse-glow 3s ease-in-out infinite alternate;
+  }
+  
+  /* Text Shimmer Effect */
+  .text-shimmer {
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.4),
+      transparent
+    );
+    background-size: 200% 100%;
+    animation: shimmer 3s infinite;
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+  
+  /* Modern Button Styles */
+  .btn-modern {
+    @apply relative overflow-hidden bg-gradient-to-r from-emerald-500 to-green-600 text-white font-semibold px-8 py-4 rounded-2xl shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl;
+  }
+  
+  .btn-modern::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+    transition: left 0.5s;
+  }
+  
+  .btn-modern:hover::before {
+    left: 100%;
+  }
+  
+  /* Perspective utilities */
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-emerald-100 dark:bg-emerald-900;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-emerald-500 dark:bg-emerald-600 rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-emerald-600 dark:bg-emerald-500;
   }
 }
 
@@ -40,13 +142,201 @@ body {
   .text-urdu {
     font-family: "Gulzar", serif;
   }
+  
+  /* Background gradient utilities */
+  .bg-islamic-gradient {
+    background: linear-gradient(135deg, #065f46 0%, #047857 25%, #059669 50%, #10b981 75%, #34d399 100%);
+  }
+  
+  .bg-golden-gradient {
+    background: linear-gradient(135deg, #f59e0b 0%, #f97316 25%, #ea580c 50%, #dc2626 75%, #b91c1c 100%);
+  }
+  
+  /* Text gradient utilities */
+  .text-islamic-gradient {
+    @apply bg-gradient-to-r from-emerald-400 via-teal-500 to-green-500 text-transparent bg-clip-text;
+  }
+  
+  .text-golden-gradient {
+    @apply bg-gradient-to-r from-yellow-400 via-yellow-500 to-orange-500 text-transparent bg-clip-text;
+  }
 }
 
+/* Animations */
+@keyframes floating {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-10px) rotate(1deg);
+  }
+  66% {
+    transform: translateY(-5px) rotate(-1deg);
+  }
+}
+
+@keyframes pulse-glow {
+  0% {
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 40px rgba(16, 185, 129, 0.8), 0 0 60px rgba(16, 185, 129, 0.4);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-in-right {
+  0% {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scale-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Islamic Pattern Background */
+.islamic-pattern {
+  background-image: radial-gradient(circle at 50% 50%, rgba(16, 185, 129, 0.1) 0%, transparent 50%);
+  background-size: 50px 50px;
+}
+
+/* Particle Effect */
+.particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  animation: particle-float 10s infinite linear;
+}
+
+@keyframes particle-float {
+  0% {
+    transform: translateY(100vh) translateX(0px);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px) translateX(100px);
+    opacity: 0;
+  }
+}
+
+/* Legacy styles for compatibility */
 .bg-image {
   background-image: url("/madarsa.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+}
+
+.content-overlay {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.hover-dim:hover {
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.image-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-hover:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.footer-bg-image {
+  background-image: url("/footer2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 70vh;
+}
+
+.contact-bg-image {
+  background-image: url("/quranAyat1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+
+.search-form-container {
+  position: relative;
+  isolation: isolate;
+}
+
+.search-bg-image {
+  background-image: url("/madarsa.jpg");
+  background-size: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  inset: 0;
+  z-index: -1;
 }
 
 .content-overlay {

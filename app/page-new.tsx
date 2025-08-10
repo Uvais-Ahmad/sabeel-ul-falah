@@ -10,10 +10,10 @@ import ModernNavbar from "@/components/modern/navbar"
 import ModernHeroSection from "@/components/modern/hero-section"
 import ModernAboutSection from "@/components/modern/about-section"
 import ModernProgramsSection from "@/components/modern/programs-section"
-import ModernDonationSection from "@/components/modern/donation-section"
 import ModernGallerySection from "@/components/modern/gallery-section"
 import ModernContactSection from "@/components/modern/contact-section"
 import ModernFooter from "@/components/modern/footer"
+import SearchForm from "@/components/search-form"
 
 // Loading Screen Component
 const LoadingScreen = () => (
@@ -87,11 +87,11 @@ export default function Home() {
             {/* Programs Section */}
             <ModernProgramsSection t={t} language={language} theme={theme} />
 
-            {/* Donation Section */}
-            <ModernDonationSection t={t} language={language} theme={theme} />
-
             {/* Gallery Section */}
             <ModernGallerySection language={language} theme={theme} />
+
+            {/* Search Form (keeping the existing one for now) */}
+            <SearchForm />
 
             {/* Contact Section */}
             <ModernContactSection t={t} language={language} theme={theme} />

@@ -12,6 +12,7 @@ import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa"
 import moment from 'moment-hijri'
 import SearchForm from "@/components/search-form"
 import { translations } from "@/lib/translations"
+import { Card, CardContent } from "@/components/ui/card"
 
 // First, let's define the structure of our translations
 type TranslationType = typeof translations;
@@ -103,24 +104,35 @@ const HeroSection = ({ t, language, theme }: CommonProps) => (
 const AboutSection = ({ t, theme }: CommonProps) => (
   <section id="about" className={`py-16 ${theme === "dark" ? "bg-neutral-900" : "bg-gray-100"}`}>
     <div className="container mx-auto px-4">
-      <h2 className={`text-3xl font-bold mb-8 text-center ${theme === "dark" ? "gradient-text" : "text-emerald-600"}`}>
-        {t("about.title")}
-      </h2>
-      <div className="flex flex-col md:flex-row items-center justify-between">
-        <div className="md:w-1/2 mb-8 md:mb-0">
-          <p className="mb-4">{t("about.description1")}</p>
-          <p>{t("about.description2")}</p>
-        </div>
-        <div className={`md:w-1/2 ${theme === "dark" ? "bg-neutral-800" : "bg-white"} p-6 rounded-lg shadow-lg`}>
-          <h3 className={`text-2xl font-semibold mb-4 ${theme === "dark" ? "gradient-text" : "text-emerald-600"}`}>
-            {t("about.values.title")}
-          </h3>
-          <ul className="list-disc list-inside">
-            {(t("about.values.items") as string[]).map((item: string, index: number) => (
-              <li key={index}>{item}</li>
-            ))}
-          </ul>
-        </div>
+      <div className="flex justify-center">
+        <Card className={`w-full max-w-4xl ${theme === "dark" ? "bg-neutral-800" : "bg-white"} shadow-xl border-0`}>
+          <CardContent className="space-y-4 py-6">
+            <h2 className={`text-3xl font-bold text-center ${theme === "dark" ? "gradient-text" : "text-emerald-600"}`}>
+              {t("about.title")}
+            </h2>
+            <p className="text-center">{t("about.description1")}</p>
+            <p className="text-center">{t("about.description2")}</p>
+            <p className="text-center">{t("about.description3")}</p>
+          </CardContent>
+        </Card>
+      </div>
+    </div>
+  </section>
+)
+
+const DonationSection = ({ t, theme }: CommonProps) => (
+  <section id="donation" className={`py-16 ${theme === "dark" ? "bg-neutral-900" : "bg-gray-100"}`}>
+    <div className="container mx-auto px-4">
+      <div className="flex justify-center">
+        <Card className={`w-full max-w-4xl ${theme === "dark" ? "bg-neutral-800" : "bg-white"} shadow-xl border-0`}>
+          <CardContent className="space-y-4 py-6">
+            <h2 className={`text-3xl font-bold text-center ${theme === "dark" ? "gradient-text" : "text-emerald-600"}`}>
+              {t("donation.title")}
+            </h2>
+            <p className="text-center">{t("donation.description1")}</p>
+            <p className="text-center">{t("donation.description2")}</p>
+          </CardContent>
+        </Card>
       </div>
     </div>
   </section>
@@ -345,6 +357,7 @@ export default function Home() {
         <main className="pt-20">
           <HeroSection t={t} language={language} theme={theme} />
           <AboutSection t={t} language={language} theme={theme} />
+          <DonationSection t={t} language={language} theme={theme} />
           <ProgramsSection t={t} language={language} theme={theme} />
           <GallerySection language={language} theme={theme} />
           <StatsSection t={t} language={language} theme={theme} />

@@ -48,21 +48,21 @@ const DonationCard = ({
         </div>
       )}
       
-      <div className={`relative backdrop-blur-md ${popular ? 'bg-gradient-to-br from-yellow-500/20 to-orange-500/20 border-yellow-400/50' : 'bg-white/10 dark:bg-black/20 border-white/20'} rounded-3xl p-8 border shadow-2xl hover:shadow-3xl transition-all duration-500 transform-gpu hover:scale-105 hover:-rotate-1 h-full`}>
+      <div className={`relative backdrop-blur-md ${popular ? 'bg-gradient-to-br from-yellow-500/20 to-orange-500/20 border-yellow-400/50' : 'bg-white/10 dark:bg-black/20 border-white/20'} rounded-2xl p-6 border shadow-xl hover:shadow-2xl transition-all duration-500 transform-gpu hover:scale-105 hover:-rotate-1 h-full`}>
         <div className="text-center">
-          <div className="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-emerald-500 to-green-600 rounded-2xl mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-            <Icon className="h-8 w-8 text-white" />
+          <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-emerald-500 to-green-600 rounded-xl mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+            <Icon className="h-6 w-6 text-white" />
           </div>
           
-          <h3 className="text-2xl font-bold text-yellow-400 mb-4">{title}</h3>
-          <p className="text-emerald-100 text-sm leading-relaxed mb-6">{description}</p>
+          <h3 className="text-lg font-bold text-yellow-400 mb-3">{title}</h3>
+          <p className="text-emerald-100 text-sm leading-relaxed mb-4">{description}</p>
           
-          <div className="text-3xl font-bold text-white mb-6">{amount}</div>
+          <div className="text-2xl font-bold text-white mb-4">{amount}</div>
           
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className={`w-full px-6 py-3 ${popular ? 'bg-gradient-to-r from-yellow-500 to-orange-600 text-black' : 'bg-gradient-to-r from-emerald-500 to-green-600 text-white'} rounded-2xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300`}
+            className={`w-full px-4 py-2 ${popular ? 'bg-gradient-to-r from-yellow-500 to-orange-600 text-black' : 'bg-gradient-to-r from-emerald-500 to-green-600 text-white'} rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 text-sm`}
           >
             Donate Now
           </motion.button>
@@ -186,12 +186,12 @@ export default function ModernDonationSection({ t, language }: DonationSectionPr
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className={`text-5xl lg:text-6xl font-bold mb-6 ${language === "ur" ? "font-gulzar" : ""}`}>
+          <h2 className={`text-3xl lg:text-4xl font-bold mb-6 ${language === "ur" ? "font-gulzar" : ""}`}>
             <span className="bg-gradient-to-r from-yellow-200 via-yellow-400 to-yellow-600 text-transparent bg-clip-text">
               {t("donation.title") || "Support Our Mission"}
             </span>
           </h2>
-          <p className="text-xl text-emerald-100 max-w-4xl mx-auto leading-relaxed mb-8">
+          <p className="text-lg text-emerald-100 max-w-4xl mx-auto leading-relaxed mb-6">
             {t("donation.subtitle") || "Your generous donations help us provide quality Islamic education and support to our students and community."}
           </p>
           

@@ -36,14 +36,14 @@ const ContactInfo = ({
       transition={{ duration: 0.6, delay }}
       className="group"
     >
-      <div className="backdrop-blur-md bg-white/10 dark:bg-black/20 rounded-2xl p-6 border border-white/20 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105">
-        <div className="flex items-start space-x-4">
-          <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-emerald-500 to-green-600 rounded-xl group-hover:scale-110 transition-transform duration-300">
-            <Icon className="h-6 w-6 text-white" />
+      <div className="backdrop-blur-md bg-white/10 dark:bg-black/20 rounded-xl p-5 border border-white/20 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105">
+        <div className="flex items-start space-x-3">
+          <div className="flex items-center justify-center w-10 h-10 bg-gradient-to-br from-emerald-500 to-green-600 rounded-lg group-hover:scale-110 transition-transform duration-300">
+            <Icon className="h-5 w-5 text-white" />
           </div>
           <div>
-            <h3 className="text-yellow-400 font-semibold mb-2">{title}</h3>
-            <p className="text-emerald-100 leading-relaxed">{content}</p>
+            <h3 className="text-yellow-400 font-semibold mb-1 text-sm">{title}</h3>
+            <p className="text-emerald-100 leading-relaxed text-sm">{content}</p>
           </div>
         </div>
       </div>
@@ -188,12 +188,12 @@ export default function ModernContactSection({ t, language }: ContactSectionProp
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className={`text-5xl lg:text-6xl font-bold mb-6 ${language === "ur" ? "font-gulzar" : ""}`}>
+          <h2 className={`text-3xl lg:text-4xl font-bold mb-6 ${language === "ur" ? "font-gulzar" : ""}`}>
             <span className="bg-gradient-to-r from-yellow-200 via-yellow-400 to-yellow-600 text-transparent bg-clip-text">
               {t("contact.title") || "Contact Us"}
             </span>
           </h2>
-          <p className="text-xl text-emerald-100 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg text-emerald-100 max-w-3xl mx-auto leading-relaxed">
             {t("contact.subtitle") || "Get in touch with us for admissions, inquiries, or to learn more about our programs."}
           </p>
         </motion.div>

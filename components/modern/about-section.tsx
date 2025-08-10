@@ -35,12 +35,12 @@ const FeatureCard = ({
       transition={{ duration: 0.6, delay }}
       className="group"
     >
-      <div className="backdrop-blur-md bg-white/10 dark:bg-black/20 rounded-2xl p-8 border border-white/20 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 h-full">
-        <div className="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-emerald-400 to-green-600 rounded-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
-          <Icon className="h-8 w-8 text-white" />
+      <div className="backdrop-blur-md bg-white/10 dark:bg-black/20 rounded-xl p-6 border border-white/20 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 h-full">
+        <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-emerald-400 to-green-600 rounded-xl mb-4 group-hover:scale-110 transition-transform duration-300">
+          <Icon className="h-6 w-6 text-white" />
         </div>
-        <h3 className="text-xl font-bold text-white mb-4">{title}</h3>
-        <p className="text-emerald-100 leading-relaxed">{description}</p>
+        <h3 className="text-lg font-bold text-white mb-3">{title}</h3>
+        <p className="text-emerald-100 text-sm leading-relaxed">{description}</p>
       </div>
     </motion.div>
   )
@@ -102,16 +102,16 @@ export default function ModernAboutSection({ t, language }: AboutSectionProps) {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className={`text-5xl lg:text-6xl font-bold mb-6 ${language === "ur" ? "font-gulzar" : ""}`}>
+          <h2 className={`text-3xl lg:text-4xl font-bold mb-6 ${language === "ur" ? "font-gulzar" : ""}`}>
             <span className="bg-gradient-to-r from-yellow-200 via-yellow-400 to-yellow-600 text-transparent bg-clip-text">
               {t("about.title") || "About Us"}
             </span>
           </h2>
           <div className="max-w-4xl mx-auto">
-            <p className="text-xl text-emerald-100 leading-relaxed mb-6">
+            <p className="text-lg text-emerald-100 leading-relaxed mb-4">
               {t("about.description1") || "Sabeel ul Falah is dedicated to providing comprehensive Islamic education that nurtures both spiritual and academic growth."}
             </p>
-            <p className="text-lg text-emerald-200 leading-relaxed">
+            <p className="text-base text-emerald-200 leading-relaxed">
               {t("about.description2") || "Our mission is to create a learning environment where students develop strong Islamic character while achieving academic excellence."}
             </p>
           </div>

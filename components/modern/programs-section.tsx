@@ -41,9 +41,9 @@ const ProgramCard = ({
       transition={{ duration: 0.8, delay }}
       className="group perspective-1000"
     >
-      <div className="relative backdrop-blur-md bg-white/10 dark:bg-black/20 rounded-3xl overflow-hidden border border-white/20 shadow-2xl hover:shadow-3xl transition-all duration-500 transform-gpu hover:scale-105 hover:rotate-1">
+      <div className="relative backdrop-blur-md bg-white/10 dark:bg-black/20 rounded-2xl overflow-hidden border border-white/20 shadow-xl hover:shadow-2xl transition-all duration-500 transform-gpu hover:scale-105 hover:rotate-1">
         {/* Image */}
-        <div className="relative h-48 overflow-hidden">
+        <div className="relative h-40 overflow-hidden">
           <Image
             src={imageUrl}
             alt={title}
@@ -53,30 +53,30 @@ const ProgramCard = ({
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
           
           {/* Level Badge */}
-          <div className="absolute top-4 left-4">
-            <span className="px-3 py-1 bg-gradient-to-r from-emerald-500 to-green-600 text-white text-sm font-semibold rounded-full">
+          <div className="absolute top-3 left-3">
+            <span className="px-2 py-1 bg-gradient-to-r from-emerald-500 to-green-600 text-white text-xs font-semibold rounded-full">
               {level}
             </span>
           </div>
         </div>
 
         {/* Content */}
-        <div className="p-6">
-          <h3 className="text-xl font-bold text-white mb-3 group-hover:text-yellow-400 transition-colors duration-300">
+        <div className="p-5">
+          <h3 className="text-lg font-bold text-white mb-2 group-hover:text-yellow-400 transition-colors duration-300">
             {title}
           </h3>
-          <p className="text-emerald-100 text-sm leading-relaxed mb-4">
+          <p className="text-emerald-100 text-sm leading-relaxed mb-3">
             {description}
           </p>
 
           {/* Stats */}
-          <div className="flex items-center justify-between mb-4 text-sm">
+          <div className="flex items-center justify-between mb-3 text-xs">
             <div className="flex items-center space-x-1 text-emerald-200">
-              <Clock className="h-4 w-4" />
+              <Clock className="h-3 w-3" />
               <span>{duration}</span>
             </div>
             <div className="flex items-center space-x-1 text-emerald-200">
-              <Users className="h-4 w-4" />
+              <Users className="h-3 w-3" />
               <span>{students}</span>
             </div>
           </div>
@@ -85,7 +85,7 @@ const ProgramCard = ({
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-1">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} className="h-4 w-4 text-yellow-400 fill-current" />
+                <Star key={i} className="h-3 w-3 text-yellow-400 fill-current" />
               ))}
             </div>
             <motion.button
@@ -93,8 +93,8 @@ const ProgramCard = ({
               whileTap={{ scale: 0.9 }}
               className="flex items-center space-x-1 text-yellow-400 hover:text-yellow-300 transition-colors duration-300"
             >
-              <span className="text-sm font-semibold">Learn More</span>
-              <ArrowRight className="h-4 w-4" />
+              <span className="text-xs font-semibold">Learn More</span>
+              <ArrowRight className="h-3 w-3" />
             </motion.button>
           </div>
         </div>
@@ -191,12 +191,12 @@ export default function ModernProgramsSection({ t, language }: ProgramsSectionPr
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className={`text-5xl lg:text-6xl font-bold mb-6 ${language === "ur" ? "font-gulzar" : ""}`}>
+          <h2 className={`text-3xl lg:text-4xl font-bold mb-6 ${language === "ur" ? "font-gulzar" : ""}`}>
             <span className="bg-gradient-to-r from-yellow-200 via-yellow-400 to-yellow-600 text-transparent bg-clip-text">
               {t("programs.title") || "Our Programs"}
             </span>
           </h2>
-          <p className="text-xl text-emerald-100 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg text-emerald-100 max-w-3xl mx-auto leading-relaxed">
             {t("programs.subtitle") || "Comprehensive Islamic education programs designed to nurture spiritual growth, academic excellence, and character development."}
           </p>
         </motion.div>

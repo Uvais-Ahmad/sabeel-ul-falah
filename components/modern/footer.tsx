@@ -153,7 +153,7 @@ export default function ModernFooter({ t, language }: ModernFooterProps) {
                     className="object-contain"
                   />
                 </div>
-                <h3 className={`text-2xl font-bold ${language === "ur" ? "font-gulzar" : ""}`}>
+                <h3 className={`text-lg font-bold ${language === "ur" ? "font-gulzar" : ""}`}>
                   <span className="bg-gradient-to-r from-yellow-400 to-yellow-600 text-transparent bg-clip-text">
                     {t("siteName") || "Sabeel ul Falah"}
                   </span>
@@ -180,7 +180,7 @@ export default function ModernFooter({ t, language }: ModernFooterProps) {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="space-y-6"
             >
-              <h3 className="text-2xl font-bold text-yellow-400 mb-8">
+              <h3 className="text-lg font-bold text-yellow-400 mb-6">
                 {t("footer.contact") || "Contact Information"}
               </h3>
               
@@ -206,7 +206,7 @@ export default function ModernFooter({ t, language }: ModernFooterProps) {
             >
               {/* Quick Links */}
               <div>
-                <h3 className="text-2xl font-bold text-yellow-400 mb-6">
+                <h3 className="text-lg font-bold text-yellow-400 mb-6">
                   {t("footer.quick_links") || "Quick Links"}
                 </h3>
                 <div className="grid grid-cols-2 gap-3">
@@ -236,7 +236,7 @@ export default function ModernFooter({ t, language }: ModernFooterProps) {
 
               {/* Social Media */}
               <div>
-                <h3 className="text-xl font-bold text-yellow-400 mb-6">
+                <h3 className="text-lg font-bold text-yellow-400 mb-6">
                   {t("footer.social") || "Follow Us"}
                 </h3>
                 <div className="flex space-x-4">

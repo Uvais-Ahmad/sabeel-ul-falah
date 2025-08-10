@@ -43,12 +43,12 @@ const StatsCard = ({ icon: Icon, number, label, delay }: {
       transition={{ duration: 0.6, delay }}
       className="text-center"
     >
-      <div className="backdrop-blur-md bg-gradient-to-br from-emerald-400/20 to-green-600/20 rounded-2xl p-6 border border-emerald-300/30 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105">
-        <Icon className="h-12 w-12 text-emerald-400 mx-auto mb-4" />
-        <div className="text-3xl font-bold text-white mb-2">
+      <div className="backdrop-blur-md bg-gradient-to-br from-emerald-400/20 to-green-600/20 rounded-xl p-4 border border-emerald-300/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+        <Icon className="h-8 w-8 text-emerald-400 mx-auto mb-3" />
+        <div className="text-2xl font-bold text-white mb-1">
           {inView && <CountUp end={number} duration={2.5} />}+
         </div>
-        <p className="text-emerald-100 text-sm">{label}</p>
+        <p className="text-emerald-100 text-xs">{label}</p>
       </div>
     </motion.div>
   )
@@ -133,7 +133,7 @@ export default function ModernHeroSection({ t, language }: HeroSectionProps) {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className={`text-5xl lg:text-7xl font-bold mb-6 ${language === "ur" ? "font-gulzar" : ""}`}
+              className={`text-3xl lg:text-5xl font-bold mb-6 ${language === "ur" ? "font-gulzar" : ""}`}
             >
               <span className="bg-gradient-to-r from-yellow-200 via-yellow-400 to-yellow-600 text-transparent bg-clip-text drop-shadow-lg">
                 {t("hero.welcome") || "Welcome to"}
@@ -149,7 +149,7 @@ export default function ModernHeroSection({ t, language }: HeroSectionProps) {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
-              className="text-xl lg:text-2xl text-emerald-100 mb-8 leading-relaxed"
+              className="text-lg lg:text-xl text-emerald-100 mb-8 leading-relaxed"
             >
               {t("tagline") || "Nurturing Islamic Education and Character Building"}
             </motion.p>

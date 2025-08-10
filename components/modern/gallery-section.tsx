@@ -221,12 +221,12 @@ export default function ModernGallerySection({ language }: GallerySectionProps) 
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className={`text-5xl lg:text-6xl font-bold mb-6 ${language === "ur" ? "font-gulzar" : ""}`}>
+            <h2 className={`text-3xl lg:text-4xl font-bold mb-6 ${language === "ur" ? "font-gulzar" : ""}`}>
               <span className="bg-gradient-to-r from-yellow-200 via-yellow-400 to-yellow-600 text-transparent bg-clip-text">
                 {language === "ur" ? "گیلری" : "Gallery"}
               </span>
             </h2>
-            <p className="text-xl text-emerald-100 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg text-emerald-100 max-w-3xl mx-auto leading-relaxed">
               {language === "ur" 
                 ? "ہماری اسلامی تعلیمی سرگرمیوں اور کامیابیوں کی جھلکیاں"
                 : "Glimpses of our Islamic educational activities and achievements"
